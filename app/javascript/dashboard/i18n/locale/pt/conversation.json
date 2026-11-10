@@ -508,6 +508,17 @@
       "SHOPIFY_ORDERS": "Shopify Orders",
       "SHARED_FILES": "Attachments"
     },
+    "PINNED_NOTE": {
+      "TITLE": "Nota fixada",
+      "PLACEHOLDER": "Cliente VIP. Oferecer sempre portes grátis.",
+      "SAVE": "Guardar",
+      "CANCEL": "Cancelar",
+      "EDIT": "Editar",
+      "DELETE": "Apagar",
+      "LOADING": "A carregar",
+      "META": "{name} · {date}",
+      "ERROR": "Não foi possível guardar a nota fixada"
+    },
     "SHARED_FILES": {
       "EMPTY": "No attachments yet",
       "DOWNLOAD": "Download file",
