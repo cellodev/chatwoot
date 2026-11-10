@@ -526,6 +526,17 @@
       "SHOPIFY_ORDERS": "Shopify Orders",
       "SHARED_FILES": "Attachments"
     },
+    "PINNED_NOTE": {
+      "TITLE": "Pinned note",
+      "PLACEHOLDER": "VIP customer. Always offer free shipping.",
+      "SAVE": "Save",
+      "CANCEL": "Cancel",
+      "EDIT": "Edit",
+      "DELETE": "Delete",
+      "LOADING": "Loading",
+      "META": "{name} · {date}",
+      "ERROR": "Could not save the pinned note"
+    },
     "SHARED_FILES": {
       "EMPTY": "No attachments yet",
       "DOWNLOAD": "Download file",

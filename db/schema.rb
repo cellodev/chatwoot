@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2026_11_03_142055) do
+ActiveRecord::Schema[7.1].define(version: 2026_11_10_120000) do
   # These extensions should be enabled to support this database
   enable_extension "pg_stat_statements"
   enable_extension "pg_trgm"
@@ -1026,6 +1026,18 @@ ActiveRecord::Schema[7.1].define(version: 2026_11_03_142055) do
     t.index ["user_id"], name: "index_conversation_participants_on_user_id"
   end
 
+  create_table "conversation_pinned_notes", force: :cascade do |t|
+    t.integer "account_id", null: false
+    t.integer "conversation_id", null: false
+    t.integer "user_id"
+    t.string "content", limit: 300, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["account_id"], name: "index_conversation_pinned_notes_on_account_id"
+    t.index ["conversation_id"], name: "index_conversation_pinned_notes_on_conversation_id", unique: true
+    t.index ["user_id"], name: "index_conversation_pinned_notes_on_user_id"
+  end
+
   create_table "conversations", id: :serial, force: :cascade do |t|
     t.integer "account_id", null: false
     t.integer "inbox_id", null: false
@@ -1869,6 +1881,9 @@ ActiveRecord::Schema[7.1].define(version: 2026_11_03_142055) do
   add_foreign_key "conversation_monitor_work_items", "conversations", on_delete: :cascade
   add_foreign_key "conversation_monitors", "accounts", on_delete: :cascade
   add_foreign_key "conversation_monitors", "users", on_delete: :nullify
+  add_foreign_key "conversation_pinned_notes", "accounts", on_delete: :cascade
+  add_foreign_key "conversation_pinned_notes", "conversations", on_delete: :cascade
+  add_foreign_key "conversation_pinned_notes", "users", on_delete: :nullify
   add_foreign_key "inboxes", "portals"
   add_foreign_key "shopify_custom_apps", "accounts"
   add_foreign_key "user_sessions", "users"
